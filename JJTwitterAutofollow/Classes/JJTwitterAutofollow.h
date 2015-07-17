@@ -17,6 +17,11 @@
 @property (nonatomic, strong) __block NSMutableArray *accounts;
 @property (nonatomic, strong) NSArray *usersToFollow;
 
+@property (nonatomic, strong) NSString *promptTitle;
+@property (nonatomic, strong) NSString *promptMessage;
+@property (nonatomic, strong) NSString *okButtonTitle;
+@property (nonatomic, strong) NSString *cancelButtonTitle;
+
 + (JJTwitterAutofollow *)sharedManager;
 - (void)promptFromViewController:(UIViewController *)viewController;
 

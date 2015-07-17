@@ -16,8 +16,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
-    [JJTwitterAutofollow sharedManager];
+
     [[JJTwitterAutofollow sharedManager] setUsersToFollow:@[@"cnn", @"bbc", @"nintendo"]];
     
     // Override point for customization after application launch.

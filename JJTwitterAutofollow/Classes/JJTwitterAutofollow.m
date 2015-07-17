@@ -24,6 +24,12 @@ static JJTwitterAutofollow *_sharedManager = nil;
     dispatch_once(&onceToken, ^{
         _sharedManager = [[super allocWithZone:NULL] init];
     });
+    
+    [_sharedManager setPromptTitle:@"Connect"];
+    [_sharedManager setPromptMessage:@"Follow us on Twitter and stay up to date on upcoming applications and feature releases!"];
+    [_sharedManager setOkButtonTitle:@"Follow on Twitter!"];
+    [_sharedManager setCancelButtonTitle:@"Cancel"];
+    
     return _sharedManager;
 }
 
@@ -48,7 +54,6 @@ static JJTwitterAutofollow *_sharedManager = nil;
 #pragma mark - Methods 
 
 - (void)authenticate {
-    
     ACAccountStore *accountStore = [[ACAccountStore alloc] init];
     ACAccountType *twitterAccountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
 
@@ -88,9 +93,9 @@ static JJTwitterAutofollow *_sharedManager = nil;
         for (int i = 0; i < [usersToFollow count]; i++) {
             [self.twitter postFollow:usersToFollow[i] successBlock:^(NSDictionary *user)
             {
-               dispatch_group_leave(downloadGroup);
+                dispatch_group_leave(downloadGroup);
             } errorBlock:^(NSError *error) {
-               dispatch_group_leave(downloadGroup);
+                dispatch_group_leave(downloadGroup);
             }];
         }
         
@@ -106,11 +111,17 @@ static JJTwitterAutofollow *_sharedManager = nil;
 }
 
 - (void)promptFromViewController:(UIViewController *)viewController {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"AutoLean Connect" message:@"Follow us on Twitter and stay engaged on upcoming applications and feature releases.  We'd also love to hear from you about how much you're improving your processes!"  preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *OK = [UIAlertAction actionWithTitle:@"Follow on Twitter!" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:_sharedManager.promptTitle
+                                                                   message:_sharedManager.promptMessage
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *OK = [UIAlertAction actionWithTitle:_sharedManager.okButtonTitle
+                                                 style:UIAlertActionStyleDefault
+                                               handler:^(UIAlertAction *action) {
         [self authenticate];
     }];
-    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:_sharedManager.cancelButtonTitle
+                                                     style:UIAlertActionStyleCancel
+                                                   handler:^(UIAlertAction *action) {
         
     }];
     [alert addAction:OK];
