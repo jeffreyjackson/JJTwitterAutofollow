@@ -25,3 +25,8 @@ A simple drop-in singleton that will prompt your users to automatically follow a
 @property (nonatomic, strong) NSString *okButtonTitle;
 @property (nonatomic, strong) NSString *cancelButtonTitle;
 ```
+
+-  Want to know when JJTwitterAutofollow is complete?  Just watch for the NSNotification.
+```
+[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(completedFollowing:) name:JJTwitterAutofollowDidCompleteNotification object:nil];
+```
