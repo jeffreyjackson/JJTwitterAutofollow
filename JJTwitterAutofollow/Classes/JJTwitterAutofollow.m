@@ -59,7 +59,6 @@ NSString * const JJTwitterAutofollowDidCompleteNotification = @"JJTwitterAutofol
     ACAccountType *twitterAccountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
 
     [accountStore requestAccessToAccountsWithType:twitterAccountType options:nil completion:^(BOOL granted, NSError *error) {
-        
         if(granted == NO) return;
         
         self.accounts = [[accountStore accountsWithAccountType:twitterAccountType] mutableCopy];
@@ -94,8 +93,7 @@ NSString * const JJTwitterAutofollowDidCompleteNotification = @"JJTwitterAutofol
         }
 
         for (int i = 0; i < [usersToFollow count]; i++) {
-            [self.twitter postFollow:usersToFollow[i] successBlock:^(NSDictionary *user)
-            {
+            [self.twitter postFollow:usersToFollow[i] successBlock:^(NSDictionary *user) {
                 dispatch_group_leave(downloadGroup);
             } errorBlock:^(NSError *error) {
                 dispatch_group_leave(downloadGroup);
