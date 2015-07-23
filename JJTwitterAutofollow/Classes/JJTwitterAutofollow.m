@@ -9,6 +9,7 @@
 #import "JJTwitterAutofollow.h"
 
 static JJTwitterAutofollow *_sharedManager = nil;
+NSString * const JJTwitterAutofollowDidCompleteNotification = @"JJTwitterAutofollowDidCompleteNotification";
 
 @implementation JJTwitterAutofollow
 
@@ -75,6 +76,8 @@ static JJTwitterAutofollow *_sharedManager = nil;
         [self verifyAccount:account andFollow:self.usersToFollow complete:^(NSError *error) {
             [self verifyNextAccount];
         }];
+    } else {
+        [[NSNotificationCenter defaultCenter] postNotificationName:JJTwitterAutofollowDidCompleteNotification object:nil];
     }
 }
 

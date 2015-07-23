@@ -17,6 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(completedFollowing:) name:JJTwitterAutofollowDidCompleteNotification object:nil];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -28,6 +30,10 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [[JJTwitterAutofollow sharedManager] promptFromViewController:self];
+}
+
+- (void)completedFollowing:(NSNotification *)notification {
+    NSLog(@"Twitter Autofollow Complete");
 }
 
 @end

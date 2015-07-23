@@ -11,6 +11,8 @@
 #import <UIKit/UIKit.h>
 #import <Accounts/Accounts.h>
 
+extern NSString * const JJTwitterAutofollowDidCompleteNotification;
+
 @interface JJTwitterAutofollow : NSObject
 
 @property (nonatomic, strong) STTwitterAPI *twitter;
