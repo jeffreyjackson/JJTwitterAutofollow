@@ -30,3 +30,7 @@ A simple drop-in singleton that will prompt your users to automatically follow a
 ```
 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(completedFollowing:) name:JJTwitterAutofollowDidCompleteNotification object:nil];
 ```
+
+#### Credits
+
+Thanks to @nst for his work in [STTwitter](https://github.com/nst/STTwitter). 
