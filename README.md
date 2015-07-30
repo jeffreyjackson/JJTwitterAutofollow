@@ -33,4 +33,4 @@ A simple drop-in singleton that will prompt your users to automatically follow a
 
 #### Credits
 
-Thanks to @nst for his work in [STTwitter](https://github.com/nst/STTwitter). 
+Thanks to [nst](https://github.com/nst) for his work in [STTwitter](https://github.com/nst/STTwitter). 
