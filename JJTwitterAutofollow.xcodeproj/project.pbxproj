@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5D8A62C87D22AF8B45C75504 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 13176BBDD652838D8A7C0800 /* libPods.a */; };
 		D3533AE91B58399100E1EA64 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D3533AE81B58399100E1EA64 /* main.m */; };
 		D3533AEC1B58399100E1EA64 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D3533AEB1B58399100E1EA64 /* AppDelegate.m */; };
 		D3533AEF1B58399100E1EA64 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3533AEE1B58399100E1EA64 /* ViewController.m */; };
@@ -18,6 +17,7 @@
 		D3533B0E1B583ADD00E1EA64 /* JJTwitterAutofollow.m in Sources */ = {isa = PBXBuildFile; fileRef = D3533B0D1B583ADD00E1EA64 /* JJTwitterAutofollow.m */; };
 		D3533B101B583D6F00E1EA64 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3533B0F1B583D6F00E1EA64 /* UIKit.framework */; };
 		D3533B121B58416E00E1EA64 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3533B111B58416E00E1EA64 /* Accounts.framework */; };
+		F10C0ECF282F2076A036EE9B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 689635A5FF7553FA5202681D /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,8 +31,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		13176BBDD652838D8A7C0800 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FA0D984034B11A4A7B96061 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		689635A5FF7553FA5202681D /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BB950B078F0CA1F91D86588 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D3533AE31B58399100E1EA64 /* JJTwitterAutofollow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JJTwitterAutofollow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3533AE71B58399100E1EA64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -60,7 +60,7 @@
 			files = (
 				D3533B121B58416E00E1EA64 /* Accounts.framework in Frameworks */,
 				D3533B101B583D6F00E1EA64 /* UIKit.framework in Frameworks */,
-				5D8A62C87D22AF8B45C75504 /* libPods.a in Frameworks */,
+				F10C0ECF282F2076A036EE9B /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,7 +88,7 @@
 			children = (
 				D3533B111B58416E00E1EA64 /* Accounts.framework */,
 				D3533B0F1B583D6F00E1EA64 /* UIKit.framework */,
-				13176BBDD652838D8A7C0800 /* libPods.a */,
+				689635A5FF7553FA5202681D /* Pods.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -168,6 +168,7 @@
 				D3533AE01B58399100E1EA64 /* Frameworks */,
 				D3533AE11B58399100E1EA64 /* Resources */,
 				69F91668AE24BC2A34AC7723 /* Copy Pods Resources */,
+				44537522BE764B7B6729DB2C /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -202,7 +203,7 @@
 		D3533ADB1B58399100E1EA64 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "AutoLean, Inc.";
 				TargetAttributes = {
 					D3533AE21B58399100E1EA64 = {
@@ -254,6 +255,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		44537522BE764B7B6729DB2C /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		66467E74CE9987D79AFD9E24 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -357,6 +373,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -372,7 +389,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -410,7 +427,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -424,7 +441,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = JJTwitterAutofollow/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.autolean.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -435,7 +454,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = JJTwitterAutofollow/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.autolean.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -444,16 +465,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = JJTwitterAutofollowTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.autolean.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JJTwitterAutofollow.app/JJTwitterAutofollow";
 			};
@@ -463,12 +482,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = JJTwitterAutofollowTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.autolean.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JJTwitterAutofollow.app/JJTwitterAutofollow";
 			};

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <STTwitter.h>
+#import "STTwitter.h"
 #import <UIKit/UIKit.h>
 #import <Accounts/Accounts.h>
 
